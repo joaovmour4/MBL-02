@@ -7,12 +7,11 @@ interface props{
 }
 
 export default function Info(props: props) {
-  console.log(props.responseData)
   return (
     <View>
-      <Text style={styles.text}>Temperatura: {props.responseData?.main?.temp.toFixed(2)}</Text>
+      <Text style={styles.text}>Temperatura: {props.responseData?.main?.temp.toFixed(2)} ºC</Text>
       <Text style={styles.text}>Umidade: {props.responseData?.main?.humidity}%</Text>
-      <Text style={styles.text}>Descrição: {props.responseData?.wheater[0].description}</Text>
+      <Text style={styles.text}>Descrição: {props.responseData?.weather[0]?.description}</Text>
     </View>
   )
 }

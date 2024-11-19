@@ -5,13 +5,14 @@ import Button from "./components/Button";
 import Info from "./components/Info";
 
 interface responseData{
-  wheater: {
-    description: string
-  }[]
+  weather: Array<arrayWheater>
   main: {
     temp: number
     humidity: number
   }
+}
+interface arrayWheater {
+  description: string
 }
 
 const { width } = Dimensions.get('window')
@@ -23,6 +24,7 @@ export default function Index() {
 
   return (
     <View style={styles.mainView}>
+      <Text style={styles.text}>Consulta de Clima</Text>
       <View style={styles.view}>
         <Input 
           placeholder="Latitude"
@@ -50,6 +52,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   mainView: {
     flex: 1,
+    rowGap: 15,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white'
@@ -59,6 +62,10 @@ const styles = StyleSheet.create({
     flex: 1,
     rowGap: 10,
     backgroundColor: 'white'
+  },
+  text: {
+    fontSize: 32,
+    fontWeight: 'bold'
   }
 })
 

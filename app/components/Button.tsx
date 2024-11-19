@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useMemo, useCallback } from 'react'
 
 interface props{
   latitude: string
@@ -18,7 +18,6 @@ export default function Button(props: props) {
         console.error('Erro ao buscar dados da API:', error)
       });
   }
-
 
   return (
     <View style={styles.view}>
